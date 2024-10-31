@@ -10,9 +10,6 @@ class FuzzyLogicDSLTest extends AnyFlatSpec with Matchers with BeforeAndAfterEac
     FuzzyLogicDSL.env.clear()
     FuzzyLogicDSL.globalEnv.clear()
     FuzzyLogicDSL.gateSystem.gates.clear()
-    // Note: If you have a way to clear the class registry, do it here.
-    // For example: FuzzyLogicDSL.clearClasses()
-    // Since classRegistry is private, consider adding a clear method if needed.
   }
 
   behavior of "Class system and inheritance"
