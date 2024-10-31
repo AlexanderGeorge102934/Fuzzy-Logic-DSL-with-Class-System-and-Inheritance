@@ -6,7 +6,7 @@ type GlobalEnvironment = mutable.Map[String, Double] // Global variable environm
 object FuzzyLogicDSL:
 
   given env: Environment = mutable.Map() // Environment for storing variables within specific gates
-  private val globalEnv: GlobalEnvironment = mutable.Map() // Global environment for variables not tied to a specific gate
+  val globalEnv: GlobalEnvironment = mutable.Map() // Global environment for variables not tied to a specific gate
 
   // Abstract class for fuzzy expressions, with the 'eval' method for evaluation
   abstract class FuzzyExpr:
@@ -45,7 +45,7 @@ object FuzzyLogicDSL:
   case class Instance(classDef: ClassDef, variables: mutable.Map[String, Double] = mutable.Map())
 
   // The class registry holds all class definitions
-  private val classRegistry: mutable.Map[String, ClassDef] = mutable.Map()
+  val classRegistry: mutable.Map[String, ClassDef] = mutable.Map()
 
   // Stack to keep track of the current class context
   private val currentClassStack: mutable.Stack[ClassDef] = mutable.Stack()
@@ -235,8 +235,8 @@ object FuzzyLogicDSL:
 
   // Gate and GateSystem definitions remain unchanged
   case class Gate(name: String) // Define a gate by name
-  private case class GateSystem(gates: mutable.Map[String, FuzzyExpr] = mutable.Map()) // Holds all gates and their associated fuzzy expressions
-  private val gateSystem = GateSystem()
+  case class GateSystem(gates: mutable.Map[String, FuzzyExpr] = mutable.Map()) // Holds all gates and their associated fuzzy expressions
+  val gateSystem: GateSystem = GateSystem()
 
 object Main:
   import FuzzyLogicDSL.*
