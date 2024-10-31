@@ -54,7 +54,7 @@ This project implements a Domain-Specific Language (DSL) for handling fuzzy logi
   ```
 ### 3. **Defining Class Variables**:
 - By default, class variables will have a value of 0.0. To change the value they must be changed within class methods or when they are instantiated. They cannot be assigned values by itself in the class. All class variables must be of type double (FuzzyVar)
-- **Syntax for defining class variables**: `ClassVar("variableName", "variableType")`
+- **Syntax for defining class variables**: `ClassVar("variableName", "variableType")` so all VarTypes are of type double
   ```scala
   ClassVar("var", "double")
   ```
